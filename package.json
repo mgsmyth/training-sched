@@ -1,0 +1,24 @@
+{
+  "name": "training-sched",
+  "version": "1.0.0",
+  "engines": {
+    "node": "7.4.0"
+  },
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nf start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "1.18.0",
+    "express": "4.15.4",
+    "foreman": "2.0.0",
+    "pg": "7.3.0",
+    "sequelize": "4.8.2",
+    "sequelize-cli": "3.0.0-1"
+  }
+}
