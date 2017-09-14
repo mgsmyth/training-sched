@@ -30,6 +30,29 @@ routes.route('/workouts')
     });
   });
 
+routes.route('/workouts/:id')
+  .get(function(req, res) {
+    models.workout.find({ where: { id: req.params.id } }).then(function(workout) {
+      res.json(workout);
+    });
+  })
+  .post(function(req, res) {
+    models.workout.find({ where: { id: req.params.id } }).then(function(workout) {
+      if (workout) {
+        workout.updateAttributes({
+          description: req.body.description,
+          length: req.body.length,
+          run_type_id: req.body.run_type_id,
+          training_day: req.body.training_day,
+          goal: req.body.goal,
+          advice: req.body.advice
+        }).then(function(workout) {
+          res.send(workout);
+        });
+      }
+    });
+});
+
 routes.route('/runTypes')
   .get(function(req, res) {
     models.run_type.findAll({}).then(function(runTypes) {
