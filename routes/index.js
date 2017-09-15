@@ -55,12 +55,12 @@ routes.route('/workouts/:id')
 
 routes.route('/runTypes')
   .get(function(req, res) {
-    models.runType.findAll({}).then(function(runTypes) {
+    models.run_type.findAll({}).then(function(runTypes) {
       res.json(runTypes);
     });
   })
   .post(function(req, res) {
-    models.runType.create({
+    models.run_type.create({
       name: req.body.name,
     }).then(function(runTypes) {
       res.json(runTypes);
