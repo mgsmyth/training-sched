@@ -30,6 +30,9 @@ Object.keys(db).forEach(modelName => {
   }
 });
 
+db.run_type.hasMany(db.workout, { foreignKey: 'run_type_id' });
+db.workout.belongsTo(db.run_type, { foreignKey: 'run_type_id' });
+
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 

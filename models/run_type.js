@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     classMethods: {
       associate: function(models) {
-        RunType.hasMany(models.workout);
+        RunType.hasMany(models.workout, { foreignKey: 'run_type_id' });
       }
     }
   });

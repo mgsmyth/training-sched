@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     classMethods: {
       associate: function(models) {
-        Workout.hasOne(models.RunType, { foreign_key: 'run_type_id' });
+        Workout.belongsTo(models.run_type, { foreignKey: 'run_type_id' });
       }
     }
   });
